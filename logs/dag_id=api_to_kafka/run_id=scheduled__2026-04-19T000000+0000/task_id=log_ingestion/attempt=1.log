@@ -1,0 +1,68 @@
+[2026-04-20T11:29:10.234+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_kafka.log_ingestion scheduled__2026-04-19T00:00:00+00:00 [queued]>
+[2026-04-20T11:29:10.245+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_kafka.log_ingestion scheduled__2026-04-19T00:00:00+00:00 [queued]>
+[2026-04-20T11:29:10.246+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-04-20T11:29:10.264+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): log_ingestion> on 2026-04-19 00:00:00+00:00
+[2026-04-20T11:29:10.274+0000] {standard_task_runner.py:60} INFO - Started process 147 to run task
+[2026-04-20T11:29:10.279+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'api_to_kafka', 'log_ingestion', 'scheduled__2026-04-19T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpqsrow6na']
+[2026-04-20T11:29:10.282+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask log_ingestion
+[2026-04-20T11:29:10.363+0000] {task_command.py:423} INFO - Running <TaskInstance: api_to_kafka.log_ingestion scheduled__2026-04-19T00:00:00+00:00 [running]> on host 7e6edf166a08
+[2026-04-20T11:29:10.434+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='api_to_kafka' AIRFLOW_CTX_TASK_ID='log_ingestion' AIRFLOW_CTX_EXECUTION_DATE='2026-04-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-19T00:00:00+00:00'
+[2026-04-20T11:29:10.438+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/scripts/logs.py", line 63, in ingestion
+    conn = psycopg2.connect(
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[2026-04-20T11:29:10.450+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=api_to_kafka, task_id=log_ingestion, execution_date=20260419T000000, start_date=20260420T112910, end_date=20260420T112910
+[2026-04-20T11:29:10.465+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 3 for task log_ingestion (connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+; 147)
+[2026-04-20T11:29:10.493+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-04-20T11:29:10.514+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-20T11:39:25.020+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_kafka.log_ingestion scheduled__2026-04-19T00:00:00+00:00 [queued]>
+[2026-04-20T11:39:25.029+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_kafka.log_ingestion scheduled__2026-04-19T00:00:00+00:00 [queued]>
+[2026-04-20T11:39:25.030+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-04-20T11:39:25.045+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): log_ingestion> on 2026-04-19 00:00:00+00:00
+[2026-04-20T11:39:25.055+0000] {standard_task_runner.py:60} INFO - Started process 164 to run task
+[2026-04-20T11:39:25.058+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'api_to_kafka', 'log_ingestion', 'scheduled__2026-04-19T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpqn67m8tt']
+[2026-04-20T11:39:25.061+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask log_ingestion
+[2026-04-20T11:39:25.128+0000] {task_command.py:423} INFO - Running <TaskInstance: api_to_kafka.log_ingestion scheduled__2026-04-19T00:00:00+00:00 [running]> on host 65c6c2be50b3
+[2026-04-20T11:39:25.192+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='api_to_kafka' AIRFLOW_CTX_TASK_ID='log_ingestion' AIRFLOW_CTX_EXECUTION_DATE='2026-04-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-19T00:00:00+00:00'
+[2026-04-20T11:39:25.194+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/scripts/logs.py", line 58, in ingestion
+    conn = sqlite3.connect(DB_PATH)
+sqlite3.OperationalError: unable to open database file
+[2026-04-20T11:39:25.202+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=api_to_kafka, task_id=log_ingestion, execution_date=20260419T000000, start_date=20260420T113925, end_date=20260420T113925
+[2026-04-20T11:39:25.220+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 3 for task log_ingestion (unable to open database file; 164)
+[2026-04-20T11:39:25.232+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-04-20T11:39:25.246+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-20T11:50:28.152+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_kafka.log_ingestion scheduled__2026-04-19T00:00:00+00:00 [queued]>
+[2026-04-20T11:50:28.161+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_kafka.log_ingestion scheduled__2026-04-19T00:00:00+00:00 [queued]>
+[2026-04-20T11:50:28.161+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-04-20T11:50:28.178+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): log_ingestion> on 2026-04-19 00:00:00+00:00
+[2026-04-20T11:50:28.189+0000] {standard_task_runner.py:60} INFO - Started process 206 to run task
+[2026-04-20T11:50:28.194+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'api_to_kafka', 'log_ingestion', 'scheduled__2026-04-19T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpk8il6s9b']
+[2026-04-20T11:50:28.196+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask log_ingestion
+[2026-04-20T11:50:28.265+0000] {task_command.py:423} INFO - Running <TaskInstance: api_to_kafka.log_ingestion scheduled__2026-04-19T00:00:00+00:00 [running]> on host 44981879eb7f
+[2026-04-20T11:50:28.336+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='api_to_kafka' AIRFLOW_CTX_TASK_ID='log_ingestion' AIRFLOW_CTX_EXECUTION_DATE='2026-04-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-19T00:00:00+00:00'
+[2026-04-20T11:50:28.372+0000] {logging_mixin.py:188} INFO - Inserted: {'ip': '192.168.227.182', 'port': 443, 'timestamp': '2026-04-20 11:50:28', 'bytes': 654, 'protocol': 'TCP', 'attack_type': 'normal'}
+[2026-04-20T11:50:28.373+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-04-20T11:50:28.382+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=api_to_kafka, task_id=log_ingestion, execution_date=20260419T000000, start_date=20260420T115028, end_date=20260420T115028
+[2026-04-20T11:50:28.407+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-04-20T11:50:28.420+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
