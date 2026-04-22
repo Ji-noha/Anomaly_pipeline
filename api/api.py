@@ -3,19 +3,9 @@ import sqlite3
 import pandas as pd
 import os
 
-
 app = FastAPI()
 
-# DB_PATH = "data/db.sqlite3"
-# DB_PATH= "C:/Users/user/pipeline_anomlay/airflow-projects/data/db.sqlite3"
-# DB_PATH = os.path.join("data", "db.sqlite3")
-
-"""
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DB_PATH = os.path.join(BASE_DIR, "data", "db.sqlite3")
-"""
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "data", "db.sqlite3")
 
 @app.get("/anomalies")
