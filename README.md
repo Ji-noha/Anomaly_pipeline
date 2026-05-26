@@ -78,11 +78,21 @@ cd network-anomaly-detection
 
 ## Run Airflow services
 docker-compose up 
+
+<img width="1898" height="838" alt="image" src="https://github.com/user-attachments/assets/3950678f-98be-429b-9185-7ea9d63ea94c" />
+
 ## Start FastAPI backend
 Uvicorn api :app –reload
 ## Open FastAPI documentation
 http://localhost:8000/docs
+
+<img width="1662" height="762" alt="image" src="https://github.com/user-attachments/assets/63a4ef58-8ebb-4a89-8783-410f939b112b" />
+
 ## Launch Streamlit dashboard
 Streamlit run dashboard/dashboard.py
 ## Open dashboard
 http://localhost:8501
+
+<img width="1087" height="735" alt="image" src="https://github.com/user-attachments/assets/6cc36fea-4f39-4397-b5b1-86ebfed0c3c7" />
+
+<img width="1015" height="507" alt="image" src="https://github.com/user-attachments/assets/54837f16-bf6e-48f0-b217-e91bbc4dad67" />
