@@ -83,6 +83,6 @@ Uvicorn api :app –reload
 ## Open FastAPI documentation
 http://localhost:8000/docs
 ## Launch Streamlit dashboard
-streamlit run dashboard/app.py
+Streamlit run dashboard/dashboard.py
 ## Open dashboard
 http://localhost:8501
