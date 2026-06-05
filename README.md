@@ -72,7 +72,7 @@ Additional Infrastructure:
 ### Clone repository
 
 ```bash
-git clone https://github.com/yourusername/network-anomaly-detection.git
+git clone https://github.com/Ji-noha/Anomaly_pipeline
 cd network-anomaly-detection
 ```
 
