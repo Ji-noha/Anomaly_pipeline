@@ -22,8 +22,7 @@ Network Logs → Data Processing → Feature Engineering → Isolation Forest Mo
 
 Additional Infrastructure:
 - Apache Airflow for workflow orchestration
-- Docker for containerization
-- PostgreSQL for storage 
+- Docker for containerization 
 
 ---
 
